@@ -661,7 +661,7 @@
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-transform-typescript" "^7.6.0"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.3":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.4", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.3":
   version "7.6.3"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.6.3.tgz#935122c74c73d2240cafd32ddb5fc2a6cd35cf1f"
   dependencies:
@@ -8494,6 +8494,12 @@ react-hot-loader@^4.12.15:
     shallowequal "^1.1.0"
     source-map "^0.7.3"
 
+react-intersection-observer@^8.24.1:
+  version "8.25.1"
+  resolved "https://registry.yarnpkg.com/react-intersection-observer/-/react-intersection-observer-8.25.1.tgz#26049fbbd9fbed10121552d220c5b433b041fd60"
+  dependencies:
+    tiny-invariant "^1.0.6"
+
 react-is@^16.6.0, react-is@^16.9.0:
   version "16.10.2"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.10.2.tgz#984120fd4d16800e9a738208ab1fba422d23b5ab"
@@ -8525,6 +8531,13 @@ react-redux@^7.1.1:
     loose-envify "^1.4.0"
     prop-types "^15.7.2"
     react-is "^16.9.0"
+
+react-scroll-percentage@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/react-scroll-percentage/-/react-scroll-percentage-4.1.0.tgz#331993b3e480fe30e368570e1476b567be00a62f"
+  dependencies:
+    "@babel/runtime" "^7.5.4"
+    react-intersection-observer "^8.24.1"
 
 react-side-effect@^1.1.0:
   version "1.1.5"
@@ -9914,6 +9927,10 @@ timm@^1.6.1:
 timsort@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
+
+tiny-invariant@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/tiny-invariant/-/tiny-invariant-1.0.6.tgz#b3f9b38835e36a41c843a3b0907a5a7b3755de73"
 
 tinycolor2@^1.4.1:
   version "1.4.1"
