@@ -27,8 +27,9 @@ export default function HTML(props) {
           id="___gatsby"
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
-        {props.postBodyComponents}
         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
+        {props.postBodyComponents}
       </body>
     </html>
   )
