@@ -7,6 +7,10 @@ export const P = styled.p`
   line-height: 1.5em;
 
   margin: 50vh 1rem 50vh;
+
+  &:last-of-type {
+    margin-bottom: 100vh;
+  }
 `
 
 export const Span = styled.span`
@@ -18,4 +22,9 @@ export const VerticalCenter = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+`
+
+export const Em = styled.em`
+  font-style: italic;
+  text-transform: uppercase;
 `
