@@ -28,3 +28,15 @@ export const Em = styled.em`
   font-style: italic;
   text-transform: uppercase;
 `
+
+export const ScrollReferencePoint = styled.div`
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+`
+
+export const ScrollReferencePointWrapper = styled.div`
+  position: relative;
+`
