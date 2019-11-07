@@ -1,20 +1,58 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import Sticky from 'react-stickynode'
 import { useScrollPercentage } from 'react-scroll-percentage'
 
 import * as Styles from './styles'
 
-const Intro: React.FC<{}> = () => {
-  const [ref, percentage] = useScrollPercentage()
+const getPercentageWithLoops = (
+  scrollWrapperPercentage: number,
+  loops: number
+): string => `${Math.round(scrollWrapperPercentage * 100 * loops) % 100}%`
 
+const useScrollboundAnimation = (
+  /**
+   * The number of loops through the animation to play while scrolling through
+   * the scroll wrapper. This is useful if your animation is relatively short
+   * and thus gets a bit choppy when stretched across a long scroll length. The
+   * higher the number of loops, the more smoothly (and quickly) the animation
+   * will run.
+   */
+  loops: number = 1
+): [
+  React.MutableRefObject<LottiePlayerElement>,
+  ((node?: Element | null) => void)
+] => {
+  const playerRef = useRef<LottiePlayerElement>()
+
+  const [scrollWrapperRef, scrollWrapperPercentage] = useScrollPercentage()
+
+  useEffect(
+    () =>
+      playerRef.current.seek(
+        getPercentageWithLoops(scrollWrapperPercentage, loops)
+      ),
+    [scrollWrapperPercentage]
+  )
+
+  return [playerRef, scrollWrapperRef]
+}
+
+interface LottiePlayerElement extends Element {
+  seek(percentage: string): void
+}
+
+const Intro: React.FC<{}> = () => {
+  const [playerRef, scrollWrapperRef] = useScrollboundAnimation(5)
+
+  const [scaleAnimationRef, scaleAnimationPercentage] = useScrollPercentage()
   // `percentage` ends at 0.5, since the scroll reference point is already fully
   // visible on-screen. So we'll account for that when we normalize the
   // percentage. Then, we'll give it a multiplier to make it huge at the end.
-  const normalizedPercentage = percentage * 2 * 5
+  const normalizedPercentage = scaleAnimationPercentage * 2 * 5
 
   return (
-    <>
-      <Sticky innerZ={-1} bottomBoundary="#Intro__text-bottom">
+    <Styles.Root ref={scrollWrapperRef}>
+      <Sticky innerZ={-2} bottomBoundary="#Intro__text-bottom">
         <Styles.AnimationWrapper>
           <lottie-player
             src="https://assets5.lottiefiles.com/datafiles/dc49lw7cOTLEo6y/data.json"
@@ -24,11 +62,11 @@ const Intro: React.FC<{}> = () => {
               width: '100%',
               transform: `scale(${normalizedPercentage + 1})`,
             }}
-            loop
-            autoplay
+            ref={playerRef}
           />
         </Styles.AnimationWrapper>
       </Sticky>
+
       <Styles.TextWrapper>
         <Styles.P>
           <Styles.Span>
@@ -57,10 +95,13 @@ const Intro: React.FC<{}> = () => {
         </Styles.P>
 
         <Styles.ScrollReferencePointWrapper>
-          <Styles.ScrollReferencePoint ref={ref} id="Intro__text-bottom" />
+          <Styles.ScrollReferencePoint
+            ref={scaleAnimationRef}
+            id="Intro__text-bottom"
+          />
         </Styles.ScrollReferencePointWrapper>
       </Styles.TextWrapper>
-    </>
+    </Styles.Root>
   )
 }
 
