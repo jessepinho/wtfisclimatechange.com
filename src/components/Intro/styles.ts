@@ -17,11 +17,13 @@ export const Span = styled.span`
   background-color: #df459b;
 `
 
-export const VerticalCenter = styled.div`
+export const AnimationWrapper = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  overflow: hidden;
 `
 
 export const Em = styled.em`

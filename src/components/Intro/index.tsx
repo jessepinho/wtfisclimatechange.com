@@ -15,7 +15,7 @@ const Intro: React.FC<{}> = () => {
   return (
     <>
       <Sticky innerZ={-1} bottomBoundary="#Intro__text-bottom">
-        <Styles.VerticalCenter>
+        <Styles.AnimationWrapper>
           <lottie-player
             src="https://assets5.lottiefiles.com/datafiles/dc49lw7cOTLEo6y/data.json"
             background="transparent"
@@ -27,7 +27,7 @@ const Intro: React.FC<{}> = () => {
             loop
             autoplay
           />
-        </Styles.VerticalCenter>
+        </Styles.AnimationWrapper>
       </Sticky>
 
       <Styles.P>
