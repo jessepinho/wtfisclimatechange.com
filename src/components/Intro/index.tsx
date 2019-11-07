@@ -94,12 +94,10 @@ const Intro: React.FC<{}> = () => {
           </Styles.Span>
         </Styles.P>
 
-        <Styles.ScrollReferencePointWrapper>
-          <Styles.ScrollReferencePoint
-            ref={scaleAnimationRef}
-            id="Intro__text-bottom"
-          />
-        </Styles.ScrollReferencePointWrapper>
+        <Styles.ScrollReferencePoint
+          ref={scaleAnimationRef}
+          id="Intro__text-bottom"
+        />
       </Styles.TextWrapper>
     </Styles.Root>
   )

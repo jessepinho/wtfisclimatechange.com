@@ -32,15 +32,8 @@ export const Em = styled.em`
 `
 
 export const ScrollReferencePoint = styled.div`
-  position: absolute;
   height: 100vh;
-  top: 0;
   width: 100%;
-  z-index: -1;
-`
-
-export const ScrollReferencePointWrapper = styled.div`
-  position: relative;
 `
 
 export const TextWrapper = styled.div`
