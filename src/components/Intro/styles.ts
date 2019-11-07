@@ -42,3 +42,7 @@ export const ScrollReferencePoint = styled.div`
 export const ScrollReferencePointWrapper = styled.div`
   position: relative;
 `
+
+export const TextWrapper = styled.div`
+  margin-top: -30vh;
+`

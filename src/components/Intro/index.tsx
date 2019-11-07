@@ -29,36 +29,37 @@ const Intro: React.FC<{}> = () => {
           />
         </Styles.AnimationWrapper>
       </Sticky>
+      <Styles.TextWrapper>
+        <Styles.P>
+          <Styles.Span>
+            So you've been reading the news, and you have some questions.
+          </Styles.Span>
+        </Styles.P>
 
-      <Styles.P>
-        <Styles.Span>
-          So you've been reading the news, and you have some questions.
-        </Styles.Span>
-      </Styles.P>
+        <Styles.P>
+          <Styles.Span>What do sea level rises mean for my city?</Styles.Span>
+        </Styles.P>
+        <Styles.P>
+          <Styles.Span>
+            Is 400 parts per million of carbon in the atmosphere a high number?
+          </Styles.Span>
+        </Styles.P>
+        <Styles.P>
+          <Styles.Span>
+            What does deforestation mean for global warming?
+          </Styles.Span>
+        </Styles.P>
+        <Styles.P>
+          <Styles.Span>
+            How does it all fit together? What <Styles.Em>is</Styles.Em> climate
+            change?!
+          </Styles.Span>
+        </Styles.P>
 
-      <Styles.P>
-        <Styles.Span>What do sea level rises mean for my city?</Styles.Span>
-      </Styles.P>
-      <Styles.P>
-        <Styles.Span>
-          Is 400 parts per million of carbon in the atmosphere a high number?
-        </Styles.Span>
-      </Styles.P>
-      <Styles.P>
-        <Styles.Span>
-          What does deforestation mean for global warming?
-        </Styles.Span>
-      </Styles.P>
-      <Styles.P>
-        <Styles.Span>
-          How does it all fit together? What <Styles.Em>is</Styles.Em> climate
-          change?!
-        </Styles.Span>
-      </Styles.P>
-
-      <Styles.ScrollReferencePointWrapper>
-        <Styles.ScrollReferencePoint ref={ref} id="Intro__text-bottom" />
-      </Styles.ScrollReferencePointWrapper>
+        <Styles.ScrollReferencePointWrapper>
+          <Styles.ScrollReferencePoint ref={ref} id="Intro__text-bottom" />
+        </Styles.ScrollReferencePointWrapper>
+      </Styles.TextWrapper>
     </>
   )
 }
