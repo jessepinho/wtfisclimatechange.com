@@ -39,7 +39,7 @@ export const H1 = styled.h1`
   font-weight: 900;
   line-height: 1.15em;
 
-  padding: 25vh 0 3rem;
+  padding: 25vh 2rem 3rem;
 `
 
 export const H2 = styled.h2`
