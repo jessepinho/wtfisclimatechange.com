@@ -33,15 +33,26 @@ export const Li = styled.li`
   align-items: center;
   padding: 0 1rem;
 
-  &:first-child {
+  position: relative;
+  z-index: 0;
+
+  overflow: hidden;
+
+  &:nth-child(2) {
     background-color: #ec3836;
   }
 
-  &:nth-child(2) {
+  &:nth-child(3) {
     background-color: #96314f;
   }
+`
 
-  &:nth-child(3) {
-    background-color: #211954;
-  }
+export const LiBackgroundWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  z-index: -1;
 `
