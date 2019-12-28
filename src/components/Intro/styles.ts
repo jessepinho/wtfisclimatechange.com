@@ -42,3 +42,13 @@ export const TextWrapper = styled.div`
 export const Root = styled.div`
   margin-top: -50vh;
 `
+
+export const FadeToBlue = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background-color: rgb(65, 137, 222);
+`

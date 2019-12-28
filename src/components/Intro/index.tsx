@@ -51,55 +51,65 @@ const Intro: React.FC<{}> = () => {
   const normalizedPercentage = scaleAnimationPercentage * 2 * 5
 
   return (
-    <Styles.Root ref={scrollWrapperRef}>
-      <Sticky innerZ={-2} bottomBoundary="#Intro__text-bottom">
-        <Styles.AnimationWrapper>
-          <lottie-player
-            src="https://assets5.lottiefiles.com/datafiles/dc49lw7cOTLEo6y/data.json"
-            background="transparent"
-            speed="1"
-            style={{
-              width: '100%',
-              transform: `scale(${normalizedPercentage + 1})`,
-            }}
-            ref={playerRef}
+    <>
+      <Styles.Root ref={scrollWrapperRef}>
+        <Sticky innerZ={-2} bottomBoundary="#Intro__text-bottom">
+          <Styles.AnimationWrapper>
+            {/* Don't render the animation when it's no longer on the screen, for performance reasons */}
+            {scaleAnimationPercentage < 1 && (
+              <lottie-player
+                src="https://assets5.lottiefiles.com/datafiles/dc49lw7cOTLEo6y/data.json"
+                background="transparent"
+                speed="1"
+                style={{
+                  width: '100%',
+                  transform: `scale(${normalizedPercentage + 1})`,
+                }}
+                ref={playerRef}
+              />
+            )}
+          </Styles.AnimationWrapper>
+        </Sticky>
+
+        <Styles.TextWrapper>
+          <Styles.P>
+            <Styles.Span>
+              So you've been reading the news, and you have some questions.
+            </Styles.Span>
+          </Styles.P>
+
+          <Styles.P>
+            <Styles.Span>What do sea level rises mean for my city?</Styles.Span>
+          </Styles.P>
+          <Styles.P>
+            <Styles.Span>
+              Is 400 parts per million of carbon in the atmosphere a high
+              number?
+            </Styles.Span>
+          </Styles.P>
+          <Styles.P>
+            <Styles.Span>
+              What does deforestation mean for global warming?
+            </Styles.Span>
+          </Styles.P>
+          <Styles.P>
+            <Styles.Span>
+              How does it all fit together? What <Styles.Em>is</Styles.Em>{' '}
+              climate change?!
+            </Styles.Span>
+          </Styles.P>
+
+          <Styles.ScrollReferencePoint
+            ref={scaleAnimationRef}
+            id="Intro__text-bottom"
           />
-        </Styles.AnimationWrapper>
-      </Sticky>
+        </Styles.TextWrapper>
+      </Styles.Root>
 
-      <Styles.TextWrapper>
-        <Styles.P>
-          <Styles.Span>
-            So you've been reading the news, and you have some questions.
-          </Styles.Span>
-        </Styles.P>
-
-        <Styles.P>
-          <Styles.Span>What do sea level rises mean for my city?</Styles.Span>
-        </Styles.P>
-        <Styles.P>
-          <Styles.Span>
-            Is 400 parts per million of carbon in the atmosphere a high number?
-          </Styles.Span>
-        </Styles.P>
-        <Styles.P>
-          <Styles.Span>
-            What does deforestation mean for global warming?
-          </Styles.Span>
-        </Styles.P>
-        <Styles.P>
-          <Styles.Span>
-            How does it all fit together? What <Styles.Em>is</Styles.Em> climate
-            change?!
-          </Styles.Span>
-        </Styles.P>
-
-        <Styles.ScrollReferencePoint
-          ref={scaleAnimationRef}
-          id="Intro__text-bottom"
-        />
-      </Styles.TextWrapper>
-    </Styles.Root>
+      {scaleAnimationPercentage > 0 && (
+        <Styles.FadeToBlue style={{ opacity: scaleAnimationPercentage }} />
+      )}
+    </>
   )
 }
 
