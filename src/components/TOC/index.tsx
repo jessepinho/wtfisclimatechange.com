@@ -1,7 +1,6 @@
 import React from 'react'
 
-import MovingEllipse from './MovingEllipse'
-import UndulatingShape from './UndulatingShape'
+import AnimatedShape from './AnimatedShape'
 
 import * as Styles from './styles'
 
@@ -11,19 +10,19 @@ const TOC: React.FC<{}> = props => (
     <Styles.Ul>
       <Styles.Li>
         <Styles.LiBackgroundWrapper>
-          <UndulatingShape />
+          <AnimatedShape color="#ec3836" animationIndex={0} id="one" />
         </Styles.LiBackgroundWrapper>
         How do we know it's real?
       </Styles.Li>
       <Styles.Li>
         <Styles.LiBackgroundWrapper>
-          <MovingEllipse color="#96314f" translate="20px" />
+          <AnimatedShape color="#96314f" animationIndex={1} id="two" />
         </Styles.LiBackgroundWrapper>
         What’s the devastation per degree of warming?
       </Styles.Li>
       <Styles.Li>
         <Styles.LiBackgroundWrapper>
-          <MovingEllipse color="#211954" translate="-20px" />
+          <AnimatedShape color="#211954" animationIndex={0} id="three" />
         </Styles.LiBackgroundWrapper>
         What does it actually mean that sea levels are rising?
       </Styles.Li>
