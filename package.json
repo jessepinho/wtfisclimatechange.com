@@ -19,9 +19,12 @@
     "react-helmet": "^5.2.1",
     "react-scroll-percentage": "^4.1.0",
     "react-stickynode": "^2.1.1",
+    "snapsvg": "^0.5.1",
+    "snapsvg-cjs": "^0.0.6",
     "styled-components": "^4.4.0"
   },
   "devDependencies": {
+    "@types/mina": "^0.4.1",
     "@types/node": "^12.11.2",
     "@types/react": "^16.9.9",
     "@types/react-dom": "^16.9.2",
