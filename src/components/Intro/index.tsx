@@ -26,13 +26,13 @@ const useScrollboundAnimation = (
 
   const [scrollWrapperRef, scrollWrapperPercentage] = useScrollPercentage()
 
-  useEffect(
-    () =>
+  useEffect(() => {
+    if (playerRef.current) {
       playerRef.current.seek(
         getPercentageWithLoops(scrollWrapperPercentage, loops)
-      ),
-    [scrollWrapperPercentage]
-  )
+      )
+    }
+  }, [scrollWrapperPercentage])
 
   return [playerRef, scrollWrapperRef]
 }
@@ -47,28 +47,37 @@ const Intro: React.FC<{}> = () => {
   const [scaleAnimationRef, scaleAnimationPercentage] = useScrollPercentage()
   // `percentage` ends at 0.5, since the scroll reference point is already fully
   // visible on-screen. So we'll account for that when we normalize the
-  // percentage. Then, we'll give it a multiplier to make it huge at the end.
-  const normalizedPercentage = scaleAnimationPercentage * 2 * 5
+  // percentage.
+  const normalizedPercentage = scaleAnimationPercentage * 2
+
+  // Then, we'll give it a multiplier to make it huge at the end.
+  const multipliedPercentage = normalizedPercentage * 5
 
   return (
     <>
       <Styles.Root ref={scrollWrapperRef}>
         <Sticky innerZ={-2} bottomBoundary="#Intro__text-bottom">
-          <Styles.AnimationWrapper>
-            {/* Don't render the animation when it's no longer on the screen, for performance reasons */}
-            {scaleAnimationPercentage < 1 && (
-              <lottie-player
-                src="https://assets5.lottiefiles.com/datafiles/dc49lw7cOTLEo6y/data.json"
-                background="transparent"
-                speed="1"
-                style={{
-                  width: '100%',
-                  transform: `scale(${normalizedPercentage + 1})`,
-                }}
-                ref={playerRef}
-              />
-            )}
-          </Styles.AnimationWrapper>
+          <Styles.FadeToBlue>
+            <Styles.AnimationWrapper
+              style={{
+                opacity: 1 - normalizedPercentage,
+              }}
+            >
+              {/* Don't render the animation when it's no longer on the screen, for performance reasons */}
+              {normalizedPercentage < 1 && (
+                <lottie-player
+                  src="https://assets5.lottiefiles.com/datafiles/dc49lw7cOTLEo6y/data.json"
+                  background="transparent"
+                  speed="1"
+                  style={{
+                    width: '100%',
+                    transform: `scale(${multipliedPercentage + 1})`,
+                  }}
+                  ref={playerRef}
+                />
+              )}
+            </Styles.AnimationWrapper>
+          </Styles.FadeToBlue>
         </Sticky>
 
         <Styles.TextWrapper>
@@ -105,10 +114,6 @@ const Intro: React.FC<{}> = () => {
           />
         </Styles.TextWrapper>
       </Styles.Root>
-
-      {scaleAnimationPercentage > 0 && (
-        <Styles.FadeToBlue style={{ opacity: scaleAnimationPercentage }} />
-      )}
     </>
   )
 }
