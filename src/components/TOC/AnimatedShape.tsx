@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import Snap from 'snapsvg-cjs'
 import styled from 'styled-components'
 
 const SVG = styled.svg`
@@ -31,6 +30,9 @@ const AnimatedShape: React.FC<{
   id: string
 }> = ({ color, animationIndex, id }) => {
   useEffect(() => {
+    // Import Snap via a runtime require(), since it includes a reference to
+    // `window` that breaks server-side rendering.
+    const Snap = require('snapsvg-cjs')
     console.log('AnimatedShape useEffect', ANIMATIONS)
     const pathElement = Snap.select(`#AnimationShape__path--${id}`)
 
