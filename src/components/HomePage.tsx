@@ -5,6 +5,7 @@ import MainCSS from './MainCSS'
 
 import Intro from './Intro'
 import Splash from './Splash'
+import TOC from './TOC'
 
 const HomePage: React.FC<{}> = () => {
   return (
@@ -13,6 +14,7 @@ const HomePage: React.FC<{}> = () => {
       <MainCSS />
       <Splash />
       <Intro />
+      <TOC />
     </>
   )
 }
