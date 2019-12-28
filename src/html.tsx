@@ -29,7 +29,7 @@ export default function HTML(props) {
         />
         {props.headComponents}
         <link
-          href="https://fonts.googleapis.com/css?family=Lato:400,700,700i,900&display=swap"
+          href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre|Lexend+Deca&display=swap"
           rel="stylesheet"
         />
       </head>

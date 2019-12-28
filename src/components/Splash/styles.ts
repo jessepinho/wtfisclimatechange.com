@@ -36,7 +36,6 @@ export const H1 = styled.h1`
   ${Header}
 
   font-size: 3.75rem;
-  font-weight: 900;
   line-height: 1.15em;
 
   padding: 25vh 2rem 3rem;

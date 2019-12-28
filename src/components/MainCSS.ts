@@ -1,8 +1,10 @@
 import { createGlobalStyle } from 'styled-components'
 
+import { FontFamily } from '../lib/theme'
+
 const MainCSS = createGlobalStyle`
   body {
-    font-family: Lato, sans-serif;
+    font-family: ${FontFamily.Primary};
   }
 `
 
