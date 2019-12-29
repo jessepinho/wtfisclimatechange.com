@@ -44,14 +44,12 @@ interface LottiePlayerElement extends Element {
 const Intro: React.FC<{}> = () => {
   const [playerRef, scrollWrapperRef] = useScrollboundAnimation(5)
 
-  const [scaleAnimationRef, scaleAnimationPercentage] = useScrollPercentage()
+  const [fadeAnimationRef, fadeAnimationPercentage] = useScrollPercentage()
   // `percentage` ends at 0.5, since the scroll reference point is already fully
   // visible on-screen. So we'll account for that when we normalize the
-  // percentage.
-  const normalizedPercentage = scaleAnimationPercentage * 2
-
-  // Then, we'll give it a multiplier to make it huge at the end.
-  const multipliedPercentage = normalizedPercentage * 5
+  // percentage. We also need to multiply it by 2 once more to account for the
+  // fact that the scroll reference point is only half the screen in height.
+  const normalizedPercentage = fadeAnimationPercentage * 2 * 2
 
   return (
     <>
@@ -69,10 +67,7 @@ const Intro: React.FC<{}> = () => {
                   src="https://assets5.lottiefiles.com/datafiles/dc49lw7cOTLEo6y/data.json"
                   background="transparent"
                   speed="1"
-                  style={{
-                    width: '100%',
-                    transform: `scale(${multipliedPercentage + 1})`,
-                  }}
+                  style={{ width: '100%' }}
                   ref={playerRef}
                 />
               )}
@@ -109,7 +104,7 @@ const Intro: React.FC<{}> = () => {
           </Styles.P>
 
           <Styles.ScrollReferencePoint
-            ref={scaleAnimationRef}
+            ref={fadeAnimationRef}
             id="Intro__text-bottom"
           />
         </Styles.TextWrapper>

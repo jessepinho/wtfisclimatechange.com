@@ -33,12 +33,12 @@ export const FadeToBlue = styled.div`
 `
 
 export const Em = styled.em`
-  font-style: italic;
   text-transform: uppercase;
 `
 
 export const ScrollReferencePoint = styled.div`
-  height: 100vh;
+  margin-top: -50vh;
+  height: 50vh;
   width: 100%;
 `
 

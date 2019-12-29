@@ -3,12 +3,13 @@ import styled from 'styled-components'
 import { FontFamily } from '../../lib/theme'
 
 export const Root = styled.div`
-  background-color: rgb(65, 137, 222);
   color: white;
 
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+
+  margin-top: -50vh;
 `
 
 export const H2 = styled.h2`
@@ -23,6 +24,7 @@ export const H2 = styled.h2`
 `
 
 export const Ul = styled.ul`
+  background-color: rgb(65, 137, 222);
   overflow: hidden;
 `
 
