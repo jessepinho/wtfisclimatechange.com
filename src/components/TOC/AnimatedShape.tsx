@@ -33,7 +33,6 @@ const AnimatedShape: React.FC<{
     // Import Snap via a runtime require(), since it includes a reference to
     // `window` that breaks server-side rendering.
     const Snap = require('snapsvg-cjs')
-    console.log('AnimatedShape useEffect', ANIMATIONS)
     const pathElement = Snap.select(`#AnimationShape__path--${id}`)
 
     const animationFunctions = ANIMATIONS[animationIndex].paths.map(
