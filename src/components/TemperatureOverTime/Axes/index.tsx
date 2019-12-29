@@ -20,10 +20,12 @@ const Axes: React.FC<{}> = props => {
   const [yTicksVisible, setYTicksVisible] = useState(false)
 
   useEffect(() => {
+    // We'll set 0.45 as the half mark to deal with math quirks in iOS Safari,
+    // where it reports the scroll percentage as being a little under 0.5.
     setYTicksVisible(prevYTicksVisible => {
-      if (percentage >= 0.5 && !prevYTicksVisible) {
+      if (percentage >= 0.45 && !prevYTicksVisible) {
         return true
-      } else if (percentage < 0.5 && prevYTicksVisible) {
+      } else if (percentage < 0.45 && prevYTicksVisible) {
         return false
       }
 
