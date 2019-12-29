@@ -6,10 +6,11 @@ import * as Styles from './styles'
 
 const TOC: React.FC<{}> = props => (
   <Styles.Root>
-    <Sticky>
+    <Sticky bottomBoundary="#TOC__menu">
       <Styles.H2>We've got your back.</Styles.H2>
     </Sticky>
-    <Styles.Ul>
+
+    <Styles.Ul id="TOC__menu">
       <Styles.Li>
         <Styles.LiBackgroundWrapper>
           <AnimatedShape color="#ec3836" animationIndex={0} id="one" />
