@@ -71,6 +71,14 @@ const Intro: React.FC<{}> = () => {
                   ref={playerRef}
                 />
               )}
+
+              <Styles.Credits
+                href="https://lottiefiles.com/3956-earth"
+                target="_blank"
+                rel="noopener nofollow"
+              >
+                Animation: Thomas Murray/LottieFiles
+              </Styles.Credits>
             </Styles.AnimationWrapper>
           </Styles.FadeToBlue>
         </Sticky>

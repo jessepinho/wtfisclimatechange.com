@@ -27,6 +27,16 @@ export const AnimationWrapper = styled.div`
   background-color: white;
 `
 
+export const Credits = styled.a`
+  color: rgb(65, 137, 222);
+  font-size: 0.75rem;
+  text-decoration: none;
+
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+`
+
 export const FadeToBlue = styled.div`
   background-color: rgb(65, 137, 222);
   height: 100%;
