@@ -7,6 +7,8 @@ export const Root = styled.div`
   justify-content: space-evenly;
 
   height: 100vh;
+
+  overflow: hidden;
 `
 
 export const DegreesNumber = styled.span`

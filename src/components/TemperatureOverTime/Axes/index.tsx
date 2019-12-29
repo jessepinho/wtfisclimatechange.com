@@ -43,7 +43,9 @@ const Axes: React.FC<{}> = props => {
           <YTick degrees={1} />
         </>
       )}
+
       <XAxis />
+
       {yTicksVisible && (
         <>
           <YTick degrees={-1} />
