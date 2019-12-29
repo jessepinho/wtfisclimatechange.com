@@ -1,12 +1,14 @@
 import React from 'react'
+import Sticky from 'react-stickynode'
 
 import AnimatedShape from './AnimatedShape'
-
 import * as Styles from './styles'
 
 const TOC: React.FC<{}> = props => (
   <Styles.Root>
-    <Styles.H2>We've got your back.</Styles.H2>
+    <Sticky>
+      <Styles.H2>We've got your back.</Styles.H2>
+    </Sticky>
     <Styles.Ul>
       <Styles.Li>
         <Styles.LiBackgroundWrapper>
