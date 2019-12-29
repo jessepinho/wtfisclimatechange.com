@@ -22,7 +22,9 @@ export const H2 = styled.h2`
   padding: 0 1rem;
 `
 
-export const Ul = styled.ul``
+export const Ul = styled.ul`
+  overflow: hidden;
+`
 
 export const Li = styled.li`
   font-size: 1.25rem;
@@ -36,14 +38,8 @@ export const Li = styled.li`
   position: relative;
   z-index: 0;
 
-  overflow: hidden;
-
-  &:nth-child(2) {
-    background-color: #ec3836;
-  }
-
-  &:nth-child(3) {
-    background-color: #96314f;
+  &:last-child {
+    overflow: hidden;
   }
 `
 

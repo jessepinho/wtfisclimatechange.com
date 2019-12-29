@@ -22,7 +22,7 @@ const TOC: React.FC<{}> = props => (
       </Styles.Li>
       <Styles.Li>
         <Styles.LiBackgroundWrapper>
-          <AnimatedShape color="#211954" animationIndex={0} id="three" />
+          <AnimatedShape color="#211954" animationIndex={2} id="three" />
         </Styles.LiBackgroundWrapper>
         What does it actually mean that sea levels are rising?
       </Styles.Li>
