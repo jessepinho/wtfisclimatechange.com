@@ -20,12 +20,15 @@ const Axes: React.FC<{}> = props => {
   const [yTicksVisible, setYTicksVisible] = useState(false)
 
   useEffect(() => {
-    console.log(percentage)
-    if (percentage >= 0.5 && !yTicksVisible) {
-      setYTicksVisible(true)
-    } else if (percentage < 0.5 && yTicksVisible) {
-      setYTicksVisible(false)
-    }
+    setYTicksVisible(prevYTicksVisible => {
+      if (percentage >= 0.5 && !prevYTicksVisible) {
+        return true
+      } else if (percentage < 0.5 && prevYTicksVisible) {
+        return false
+      }
+
+      return prevYTicksVisible
+    })
   }, [percentage])
 
   return (
