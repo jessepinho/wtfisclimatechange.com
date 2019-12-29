@@ -23,7 +23,7 @@ export const Root = styled.div`
   height: 200vh;
 
   background-image: url('data:image/svg+xml,%3Csvg width="73" height="29" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M3.202 3.699l33 22 33-22" stroke="%23FFF" stroke-width="6" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-opacity=".75"/%3E%3C/svg%3E');
-  background-position: center calc(100vh - 5rem);
+  background-position: center calc(100vh - 10rem);
   background-repeat: no-repeat;
 `
 
@@ -38,7 +38,7 @@ export const H1 = styled.h1`
   font-size: 3.75rem;
   line-height: 1.15em;
 
-  padding: 25vh 2rem 3rem;
+  padding: 15vh 2rem 3rem;
 `
 
 export const H2 = styled.h2`
