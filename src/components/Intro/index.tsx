@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import { Scrollama, Step } from 'react-scrollama'
 import Sticky from 'react-stickynode'
 import { useScrollPercentage } from 'react-scroll-percentage'
 
@@ -51,6 +52,10 @@ const Intro: React.FC<{}> = () => {
   // fact that the scroll reference point is only half the screen in height.
   const normalizedPercentage = fadeAnimationPercentage * 2 * 2
 
+  const [creditsOpacity, setCreditsOpacity] = useState(0)
+  const setCreditsOpacityFromStep = ({ data }: { data: number }) =>
+    setCreditsOpacity(data)
+
   return (
     <>
       <Styles.Root ref={scrollWrapperRef}>
@@ -76,6 +81,7 @@ const Intro: React.FC<{}> = () => {
                 href="https://lottiefiles.com/3956-earth"
                 target="_blank"
                 rel="noopener nofollow"
+                style={{ opacity: creditsOpacity }}
               >
                 Animation: Thomas Murray/LottieFiles
               </Styles.Credits>
@@ -84,32 +90,48 @@ const Intro: React.FC<{}> = () => {
         </Sticky>
 
         <Styles.TextWrapper>
-          <Styles.P>
-            <Styles.Span>
-              So you've been reading the news, and you have some questions.
-            </Styles.Span>
-          </Styles.P>
+          <Scrollama onStepEnter={setCreditsOpacityFromStep}>
+            <Step data={0}>
+              <Styles.P>
+                <Styles.Span>
+                  So you've been reading the news, and you have some questions.
+                </Styles.Span>
+              </Styles.P>
+            </Step>
 
-          <Styles.P>
-            <Styles.Span>What do sea level rises mean for my city?</Styles.Span>
-          </Styles.P>
-          <Styles.P>
-            <Styles.Span>
-              Is 400 parts per million of carbon in the atmosphere a high
-              number?
-            </Styles.Span>
-          </Styles.P>
-          <Styles.P>
-            <Styles.Span>
-              What does deforestation mean for global warming?
-            </Styles.Span>
-          </Styles.P>
-          <Styles.P>
-            <Styles.Span>
-              How does it all fit together? What <Styles.Em>is</Styles.Em>{' '}
-              climate change?!
-            </Styles.Span>
-          </Styles.P>
+            <Step data={1}>
+              <div>
+                <Styles.P>
+                  <Styles.Span>
+                    What do sea level rises mean for my city?
+                  </Styles.Span>
+                </Styles.P>
+                <Styles.P>
+                  <Styles.Span>
+                    Is 400 parts per million of carbon in the atmosphere a high
+                    number?
+                  </Styles.Span>
+                </Styles.P>
+              </div>
+            </Step>
+
+            <Step data={0}>
+              <div>
+                <Styles.P>
+                  <Styles.Span>
+                    What does deforestation mean for global warming?
+                  </Styles.Span>
+                </Styles.P>
+
+                <Styles.P>
+                  <Styles.Span>
+                    How does it all fit together? What <Styles.Em>is</Styles.Em>{' '}
+                    climate change?!
+                  </Styles.Span>
+                </Styles.P>
+              </div>
+            </Step>
+          </Scrollama>
 
           <Styles.ScrollReferencePoint
             ref={fadeAnimationRef}

@@ -35,6 +35,8 @@ export const Credits = styled.a`
   position: absolute;
   bottom: 1rem;
   right: 1rem;
+
+  transition: opacity 0.35s;
 `
 
 export const FadeToBlue = styled.div`
