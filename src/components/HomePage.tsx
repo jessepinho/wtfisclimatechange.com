@@ -5,6 +5,7 @@ import MainCSS from './MainCSS'
 
 import Intro from './Intro'
 import Splash from './Splash'
+import TemperatureOverTime from './TemperatureOverTime'
 import TOC from './TOC'
 
 const HomePage: React.FC<{}> = () => {
@@ -15,6 +16,7 @@ const HomePage: React.FC<{}> = () => {
       <Splash />
       <Intro />
       <TOC />
+      <TemperatureOverTime />
     </>
   )
 }
