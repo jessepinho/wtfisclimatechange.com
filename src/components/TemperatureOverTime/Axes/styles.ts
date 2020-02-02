@@ -6,7 +6,7 @@ export const Root = styled.div`
   align-items: flex-end;
   justify-content: space-evenly;
 
-  height: 100vh;
+  height: 100%;
 
   overflow: hidden;
 `

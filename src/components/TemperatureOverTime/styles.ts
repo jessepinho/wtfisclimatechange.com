@@ -4,6 +4,7 @@ import { FontFamily } from '../../lib/theme'
 
 export const Section = styled.section`
   background-color: #ec3836;
+  position: relative;
 `
 
 export const H2 = styled.h2`
@@ -30,4 +31,20 @@ export const P = styled.p`
   &:last-of-type {
     margin-bottom: 0;
   }
+`
+
+export const GraphWrapper = styled.div`
+  height: 100vh;
+  position: relative;
+`
+
+export const IndicatorDot = styled.div`
+  background-color: white;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+
+  offset-path: path('M0,44C75.6,44,263.5,16.3,348,2.47');
+  position: absolute;
+  bottom: 2rem;
 `

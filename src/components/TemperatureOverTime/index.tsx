@@ -8,16 +8,31 @@ const TemperatureOverTime: React.FC<{}> = props => (
   <Styles.Section>
     <Styles.H2>How do we know it's real?</Styles.H2>
     <Styles.IntroText>
-      Climate is constantly changing. That’s what it has always done and what it
-      will keep on doing. What is happening now though is different from the
-      natural fluctuation before.
+      The temperature of the earth is in{' '}
+      <a
+        href="https://climate.nasa.gov/evidence/"
+        target="_blank"
+        rel="noopener"
+      >
+        constant, slow flux
+      </a>
+      . This has been the case for hundreds of thousands of years. What is
+      happening now, though, is far different from the natural fluctuations of
+      the past.
     </Styles.IntroText>
 
     <Sticky>
-      <Axes />
+      <Styles.GraphWrapper>
+        <Axes />
+
+        <Styles.IndicatorDot />
+      </Styles.GraphWrapper>
     </Sticky>
 
-    <Styles.P>Let’s look at some benchmarks of the earth’s climate.</Styles.P>
+    <Styles.P>
+      To illustrate this, let's look at a rough timeline of the earth's
+      temperature over the last 20,0000 years.
+    </Styles.P>
     <Styles.P>
       This is the end of ice age. It was about 4.3°C colder than today.
     </Styles.P>
